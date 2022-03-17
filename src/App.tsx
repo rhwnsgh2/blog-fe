@@ -1,12 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { NavigationBar } from './components/navBar';
+import { BrowserRouter } from 'react-router-dom';
 
-function App() {
+function App(): JSX.Element{
   return (
-    <div className="App">
-      해치웠나?
-    </div>
+    <BrowserRouter>
+      <NavigationBar/>
+    </BrowserRouter>
+      
   );
 }
 
