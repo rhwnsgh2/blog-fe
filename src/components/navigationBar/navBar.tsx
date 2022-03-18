@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SideBarData } from './navBarData';
 
 export function NavigationBar() {
+  const [sidebar, setSidebar] = useState(false);
+  const showSidebar = () => setSidebar(!sidebar);
+
   return <div>{SideBarList()}</div>;
 }
 
