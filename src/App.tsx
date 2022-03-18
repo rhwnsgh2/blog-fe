@@ -1,15 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { NavigationBar } from './components/navBar';
 import { BrowserRouter } from 'react-router-dom';
+import { NavigationBar } from './components/navBar';
 
-function App(): JSX.Element{
+function App(): JSX.Element {
   return (
     <BrowserRouter>
-      <NavigationBar/>
+      <NavigationBar />
     </BrowserRouter>
-      
   );
 }
 
