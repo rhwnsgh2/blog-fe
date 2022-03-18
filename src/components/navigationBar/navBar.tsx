@@ -1,5 +1,10 @@
 import React from 'react';
+import { SideBarData } from './navBarData';
 
 export function NavigationBar() {
-  return <div>dsdaa</div>;
+  const sideBarData = { ...SideBarData };
+  sideBarData.map((data) => {
+    return <div>{data.title}</div>;
+  });
+  return <div>{sideBarData}</div>;
 }
