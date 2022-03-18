@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
+import * as FaIcons from 'react-icons/fa';
 import { SideBarData } from './navBarData';
 
 export function NavigationBar() {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
 
-  return <div>{SideBarList()}</div>;
+  return (
+    <div>
+      <FaIcons.FaBars onClick={showSidebar} />
+      {sidebar ? SideBarList() : null}
+    </div>
+  );
 }
 
 export function SideBarList() {
