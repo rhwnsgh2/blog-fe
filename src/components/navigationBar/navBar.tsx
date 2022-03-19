@@ -1,35 +1,34 @@
 import React, { useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
-import { SideBarData } from './navBarData';
+import { routerData, SideBarData } from './navBarData';
 
-export function NavigationBar() {
+export function NavigationBarContainer() {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
 
   return (
     <div>
       <FaIcons.FaBars onClick={showSidebar} />
-      {sidebar ? SideBarList() : null}
     </div>
   );
 }
 
-export function SideBarList() {
-  const sideBarData = SideBarData.slice();
+export function SideBarList(sideBarData: Array<SideBarData>) {
   const sideBar = sideBarData.map((data) => {
-    return <div key={data.title}>{data.title}</div>;
+    const item = new SideBar(data);
+    return item;
   });
   return sideBar;
 }
 
-class SideBar {
+export class SideBar {
   private _title: string;
 
   private _path: string;
 
-  constructor(title: string, path: string) {
-    this._title = title;
-    this._path = path;
+  constructor(sideBarData: SideBarData) {
+    this._title = sideBarData.title;
+    this._path = sideBarData.path;
   }
 
   public get title(): string {

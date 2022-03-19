@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const SideBarData = [
+export const routerData: Array<SideBarData> = [
   {
     title: 'react',
     path: '/react',
@@ -10,3 +10,8 @@ export const SideBarData = [
     path: '/flutter',
   },
 ];
+
+export interface SideBarData {
+  title: string;
+  path: string;
+}
