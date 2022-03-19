@@ -15,14 +15,22 @@ describe('SideBar Testing', () => {
       expect(sideBar.path).toEqual('/react');
     });
   });
+
   describe('SideBarList testing', () => {
-    it('SideBarList testing', () => {
-      const routerData: Array<SideBarData> = [
+    let routerData: Array<SideBarData>;
+    beforeEach(() => {
+      routerData = [
         { title: 'react', path: '/react' },
         { title: 'flutter', path: '/futter' },
       ];
+    });
+    it('SideBarList length', () => {
       const list = SideBarList(routerData);
       expect(list.length).toEqual(2);
+    });
+    it('SideBarList has SideBar Instance', () => {
+      const list = SideBarList(routerData);
+      expect(list[0]).toBeInstanceOf(SideBar);
     });
   });
 });
