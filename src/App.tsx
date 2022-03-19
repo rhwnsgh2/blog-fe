@@ -10,8 +10,9 @@ function App(): JSX.Element {
     <BrowserRouter>
       <NavigationBarContainer />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/react" element={<Home />} />
+        {/* <Route path="/" element={<Home />} />
+        <Route path="/react" element={<Home />} /> */}
+        {RouteElement()}
       </Routes>
     </BrowserRouter>
   );
@@ -19,7 +20,7 @@ function App(): JSX.Element {
 
 function RouteElement(): JSX.Element[] {
   const ret = routerData.map((item) => {
-    return <Route path={item.path} element />;
+    return <Route key={item.title} path={item.path} element={item.element} />;
   });
   return ret;
 }

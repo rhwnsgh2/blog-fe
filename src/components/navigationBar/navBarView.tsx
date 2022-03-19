@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import { SideBar } from './navBar';
 
 type Props = {
@@ -17,7 +18,11 @@ export const NavigationBarView: React.FC<Props> = ({ showSideBar, sideBarData })
 
 const SideBarView = (data: Array<SideBar>) => {
   const ret = data.map((item) => {
-    return <div key={item.title}>{item.title}</div>;
+    return (
+      <Link to={item.path} key={item.title}>
+        {item.title}
+      </Link>
+    );
   });
   return ret;
 };
