@@ -21,3 +21,22 @@ export function SideBarList() {
   });
   return sideBar;
 }
+
+class SideBar {
+  private _title: string;
+
+  private _path: string;
+
+  constructor(title: string, path: string) {
+    this._title = title;
+    this._path = path;
+  }
+
+  public get title(): string {
+    return this._title;
+  }
+
+  public get path(): string {
+    return this._path;
+  }
+}
