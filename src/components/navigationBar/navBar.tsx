@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import { routerData, SideBarData } from './navBarData';
+import { NavigationBarView } from './navBarView';
 
 export function NavigationBarContainer() {
   const [sidebar, setSidebar] = useState(false);
-  const showSidebar = () => setSidebar(!sidebar);
+  const showSideBar = () => setSidebar(!sidebar);
 
-  return (
-    <div>
-      <FaIcons.FaBars onClick={showSidebar} />
-    </div>
-  );
+  const sideBarData = sidebar ? SideBarList(routerData) : null;
+  return <NavigationBarView showSideBar={showSideBar} sideBarData={sideBarData} />;
 }
 
 export function SideBarList(sideBarData: Array<SideBarData>) {

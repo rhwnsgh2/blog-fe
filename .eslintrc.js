@@ -21,5 +21,6 @@ module.exports = {
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'jsx-a11y/no-noninteractive-element-interactions': 0,
     'no-underscore-dangle': 0,
+    'react/function-component-definition': 0,
   },
 };
