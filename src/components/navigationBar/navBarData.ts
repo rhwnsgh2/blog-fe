@@ -1,6 +1,7 @@
 import React from 'react';
 import { Home } from '../../pages/home';
 import { ReactPage } from '../../pages/react';
+import { FlutterPage } from '../../pages/flutter';
 
 export const routerData: Array<SideBarData> = [
   {
@@ -16,6 +17,7 @@ export const routerData: Array<SideBarData> = [
   {
     title: 'flutter',
     path: '/flutter',
+    element: FlutterPage(),
   },
 ];
 
