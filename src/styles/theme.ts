@@ -1,5 +1,5 @@
 // theme.js
-import styled, { css, DefaultTheme } from 'styled-components';
+import { DefaultTheme } from 'styled-components';
 
 const lightTheme: DefaultTheme = {
   mainBackground: `#333`,
