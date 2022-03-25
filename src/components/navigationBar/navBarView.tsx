@@ -16,8 +16,8 @@ const NavigationBar = styled.div`
 
 const Icon = styled(FaIcons.FaBars)`
   display: flex;
-  height: 2rem;
-  width: 2rem;
+  height: 4rem;
+  width: 4rem;
   color: ${(props) => props.theme.title};
 `;
 

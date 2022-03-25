@@ -9,7 +9,7 @@ import { theme } from './styles/theme';
 
 function App(): JSX.Element {
   return (
-    <ThemeProvider theme={theme.darkTheme}>
+    <ThemeProvider theme={theme.lightTheme}>
       <BrowserRouter>
         <GlobalStyle />
         <MainLayout />

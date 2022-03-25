@@ -7,14 +7,14 @@ import { NavigationBarContainer } from '../navigationBar/navBar';
 
 const Topbar = styled.div`
   display: flex;
-  height: 5rem;
+  height: 8rem;
   background-color: ${(props) => props.theme.mainBackground};
   justify-content: center;
   align-items: center;
   flex-direction: row;
 `;
 
-export const TopBarContainer = (): ReactElement => {
+export const TopBarContainer = (): React.ReactElement => {
   return (
     <Topbar>
       <NavigationBarContainer />
