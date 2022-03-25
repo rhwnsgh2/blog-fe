@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { theme } from '../../styles/theme';
 import { routerData, SideBarData } from '../navigationBar/navBarData';
+import { NavigationBarContainer } from '../navigationBar/navBar';
 
 const Topbar = styled.div`
   display: flex;
@@ -16,6 +17,7 @@ const Topbar = styled.div`
 export const TopBarContainer = (): ReactElement => {
   return (
     <Topbar>
+      <NavigationBarContainer />
       <TopBarTitle />
     </Topbar>
   );
