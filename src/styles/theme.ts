@@ -1,8 +1,22 @@
 // theme.js
 import styled, { css, DefaultTheme } from 'styled-components';
 
-export const theme: DefaultTheme = {
-  mainBackground: `rgba(0, 0, 0, 0.85)`,
+const lightTheme: DefaultTheme = {
+  mainBackground: `#333`,
+  // neutral color
+  title: `rgba(255,255,255,0.85)`,
+  primaryText: `rgba(255,255,255,0.65)`,
+  secondaryText: `rgba(255,255,255,0.45)`,
+  disable: `rgba(255,255,255,0.25)`,
+  border: `rgba(255,255,255,0.15)`,
+  divider: `rgba(255,255,255,0.06)`,
+  background: `rgba(255,255,255,0.04)`,
+  tableHeader: `rgba(255,255,255,0.02)`,
+  // point-color
+};
+
+const darkTheme: DefaultTheme = {
+  mainBackground: `#fff`,
   // neutral color
   title: `rgba(0, 0, 0, 0.85)`,
   primaryText: `rgba(0, 0, 0, 0.75)`,
@@ -13,4 +27,8 @@ export const theme: DefaultTheme = {
   background: `rgba(0, 0, 0, 0.04)`,
   tableHeader: `rgba(0, 0, 0, 0.02)`,
   // point-color
+};
+export const theme = {
+  lightTheme,
+  darkTheme,
 };
