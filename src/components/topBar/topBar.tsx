@@ -1,30 +1,35 @@
-import React from 'react';
+import React, { FunctionComponent, ReactElement } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { theme } from '../../styles/theme';
+import { routerData, SideBarData } from '../navigationBar/navBarData';
 
 const Topbar = styled.div`
   display: flex;
-  flex: 1;
+  height: 5rem;
   background-color: ${(props) => props.theme.mainBackground};
   justify-content: center;
   align-items: center;
   flex-direction: row;
 `;
 
-export const TopBarContainer = () => {
+export const TopBarContainer = (): ReactElement => {
   return (
     <Topbar>
-      <TopBarTitleContainer />
+      <TopBarTitle />
     </Topbar>
   );
 };
 
-const TopBarTitle = styled.div`
+const LinkText = styled(Link)`
   flex: 1;
   color: ${(props) => props.theme.title};
   text-align: center;
+  text-decoration: none;
 `;
 
-const TopBarTitleContainer = () => {
-  return <TopBarTitle> TopBar </TopBarTitle>;
+const TopBarTitle = (): ReactElement | null => {
+  const routeObj: SideBarData | null = routerData.find((item) => item.title === 'home') || null;
+  const ret = routeObj ? <LinkText to={routeObj.path}> TopBar </LinkText> : null;
+  return ret;
 };
