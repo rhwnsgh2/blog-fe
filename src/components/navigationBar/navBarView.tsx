@@ -10,15 +10,15 @@ type Props = {
 };
 
 const NavigationBar = styled.div`
-  flex: 1;
-  justify-self: right;
-  align-items: right;
   margin-left: 1rem;
+  margin-right: 1rem;
 `;
 
 const Icon = styled(FaIcons.FaBars)`
+  display: flex;
   height: 2rem;
   width: 2rem;
+  color: ${(props) => props.theme.title};
 `;
 
 export const NavigationBarView: React.FC<Props> = ({ showSideBar, sideBarData }) => {

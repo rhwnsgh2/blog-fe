@@ -28,6 +28,7 @@ const LinkText = styled(Link)`
   color: ${(props) => props.theme.title};
   text-align: center;
   text-decoration: none;
+  font-size: 2rem;
 `;
 
 const TopBarTitle = (): ReactElement | null => {
