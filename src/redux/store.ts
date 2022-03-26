@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
+import reducer from './rootReducer';
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
-    themes: themeReducer,
+    reducer,
   },
 });
+
+export type AppDispatch = typeof store.dispatch;
