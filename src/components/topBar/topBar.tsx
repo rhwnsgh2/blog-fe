@@ -1,7 +1,6 @@
 import React, { FunctionComponent, ReactElement } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { theme } from '../../styles/theme';
 import { routerData, SideBarData } from '../navigationBar/navBarData';
 import { NavigationBarContainer } from '../navigationBar/navBar';
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { within, userEvent } from '@storybook/testing-library';
-import { MemoryRouter } from 'react-router-dom';
 import { TopBarContainer } from '../components/topBar/topBar';
 
 export default {
@@ -18,4 +17,4 @@ const Template: ComponentStory<typeof TopBarContainer> = () => {
   return <TopBarContainer />;
 };
 
-export const LoggedOut = Template.bind({});
+export const lightTheme = Template.bind({});
