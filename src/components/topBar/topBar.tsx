@@ -1,8 +1,12 @@
 import React, { FunctionComponent, ReactElement } from 'react';
-import styled from 'styled-components';
+import styled, { DefaultTheme } from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { routerData, SideBarData } from '../navigationBar/navBarData';
 import { NavigationBarContainer } from '../navigationBar/navBar';
+import { changeTheme } from '../../redux/slice/theme';
+import { ReducerType } from '../../redux/rootReducer';
+import { theme } from '../../styles/theme';
 
 const Topbar = styled.div`
   display: flex;
@@ -18,6 +22,7 @@ export const TopBarContainer = (): React.ReactElement => {
     <Topbar>
       <NavigationBarContainer />
       <TopBarTitle />
+      <SetThemeButton />
     </Topbar>
   );
 };
@@ -34,4 +39,13 @@ const TopBarTitle = (): ReactElement | null => {
   const routeObj: SideBarData | null = routerData.find((item) => item.title === 'home') || null;
   const ret = routeObj ? <LinkText to={routeObj.path}> TopBar </LinkText> : null;
   return ret;
+};
+
+const SetThemeButton = (): ReactElement => {
+  const currentTheme = useSelector<ReducerType, DefaultTheme>((state) => state.themeReducer);
+  const dispatch = useDispatch();
+  const handleChangeTheme = () => {
+    dispatch(changeTheme(currentTheme === theme.darkTheme ? theme.lightTheme : theme.darkTheme));
+  };
+  return <input type="button" value="dark" onClick={handleChangeTheme} />;
 };

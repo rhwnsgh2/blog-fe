@@ -18,3 +18,11 @@ const Template: ComponentStory<typeof TopBarContainer> = () => {
 };
 
 export const lightTheme = Template.bind({});
+export const darkTheme = Template.bind({});
+
+darkTheme.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  const button = await canvas.findByText('dark');
+
+  await userEvent.click(button);
+};

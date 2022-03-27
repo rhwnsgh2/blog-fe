@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { ThemeProvider, DefaultTheme } from 'styled-components';
-import { theme } from '../src/styles/theme';
 import { GlobalStyle } from '../src/styles/global-style';
 import { MemoryRouter } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider, useSelector } from 'react-redux';
+import { store } from './../src/redux/store';
+import { ReducerType } from '../src/redux/rootReducer';
+import { theme } from '../src/styles/theme';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -17,13 +20,19 @@ export const parameters = {
 
 export const decorators = [
   (Story) => {
-    const [storyTheme, setStoryTheme] = useState<DefaultTheme>(theme.darkTheme);
     return (
-      <ThemeProvider theme={theme.darkTheme}>
-        <BrowserRouter>
-          <Story />
-        </BrowserRouter>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeContainer Story={Story}/>
+      </Provider>
     );
   },
 ];
+
+const ThemeContainer = ({Story})=>{
+  const mainTheme = useSelector<ReducerType, DefaultTheme>(store => store.themeReducer);
+  return(<ThemeProvider theme={mainTheme}>
+      <BrowserRouter>
+        <Story />
+    </BrowserRouter>
+  </ThemeProvider>);
+}

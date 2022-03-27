@@ -4,10 +4,9 @@ import { theme } from '../../styles/theme';
 
 export const mainTheme = createSlice({
   name: 'mainTheme',
-  initialState: theme.lightTheme,
+  initialState: theme.lightTheme as DefaultTheme,
   reducers: {
     changeTheme(state, action: PayloadAction<DefaultTheme>) {
-      console.log(action);
       return action.payload;
     },
   },
