@@ -7,6 +7,7 @@ import { NavigationBarContainer } from '../navigationBar/navBar';
 import { changeTheme } from '../../redux/slice/theme';
 import { ReducerType } from '../../redux/rootReducer';
 import { theme } from '../../styles/theme';
+import { NaviBarButton } from './naviBarButton';
 
 const Topbar = styled.div`
   display: flex;
@@ -20,7 +21,7 @@ const Topbar = styled.div`
 export const TopBarContainer = (): React.ReactElement => {
   return (
     <Topbar>
-      <NavigationBarContainer />
+      <NaviBarButton />
       <TopBarTitle />
       <SetThemeButton />
     </Topbar>

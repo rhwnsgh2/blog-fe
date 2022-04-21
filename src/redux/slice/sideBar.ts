@@ -4,11 +4,11 @@ export const sideBar = createSlice({
   name: 'sideBar',
   initialState: false,
   reducers: {
-    changeView(state) {
+    changeViewSideBar(state) {
       return !state;
     },
   },
 });
 
-export const { changeView } = sideBar.actions;
+export const { changeViewSideBar } = sideBar.actions;
 export default sideBar.reducer;

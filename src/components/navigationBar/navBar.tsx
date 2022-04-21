@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeView } from '../../redux/slice/sideBar';
+import { changeViewSideBar } from '../../redux/slice/sideBar';
 import { RootState } from '../../redux/store';
 import { routerData, SideBarData } from './navBarData';
 import { NavigationBarView } from './navBarView';
@@ -14,7 +14,7 @@ export function NavigationBarContainer() {
   return (
     <NavigationBarView
       showSideBar={() => {
-        dispatch(changeView);
+        dispatch(changeViewSideBar);
       }}
       sideBarData={sideBarData}
     />
