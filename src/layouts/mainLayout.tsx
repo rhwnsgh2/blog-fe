@@ -1,11 +1,12 @@
 import React from 'react';
-import { NavigationBarContainer } from '../components/navigationBar/navBar';
+import { NavigationBar } from '../components/navigationBar/naviBar';
 import { TopBarContainer } from '../components/topBar/topBar';
 
 export const MainLayout = (): JSX.Element => {
   return (
     <div>
       <TopBarContainer />
+      <NavigationBar />
     </div>
   );
 };

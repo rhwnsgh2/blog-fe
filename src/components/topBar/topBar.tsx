@@ -2,8 +2,6 @@ import React, { FunctionComponent, ReactElement } from 'react';
 import styled, { DefaultTheme } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { routerData, SideBarData } from '../navigationBar/navBarData';
-import { NavigationBarContainer } from '../navigationBar/navBar';
 import { changeTheme } from '../../redux/slice/theme';
 import { ReducerType } from '../../redux/rootReducer';
 import { theme } from '../../styles/theme';
@@ -28,7 +26,7 @@ export const TopBarContainer = (): React.ReactElement => {
   );
 };
 
-const LinkText = styled(Link)`
+const TopBarTitleStyled = styled.div`
   flex: 1;
   color: ${(props) => props.theme.title};
   text-align: center;
@@ -37,9 +35,7 @@ const LinkText = styled(Link)`
 `;
 
 const TopBarTitle = (): ReactElement | null => {
-  const routeObj: SideBarData | null = routerData.find((item) => item.title === 'home') || null;
-  const ret = routeObj ? <LinkText to={routeObj.path}> TopBar </LinkText> : null;
-  return ret;
+  return <TopBarTitleStyled> TopBar </TopBarTitleStyled>;
 };
 
 const SetThemeButton = (): ReactElement => {

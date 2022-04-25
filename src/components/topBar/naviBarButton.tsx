@@ -2,7 +2,7 @@ import React from 'react';
 import * as FaIcons from 'react-icons/fa';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { changeViewSideBar } from '../../redux/slice/sideBar';
+import { changeViewSideBar } from '../../redux/slice/sideBarView';
 
 const Icon = styled(FaIcons.FaBars)`
   display: flex;
