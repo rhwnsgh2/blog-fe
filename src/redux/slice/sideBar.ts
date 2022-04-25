@@ -1,7 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Home } from '../../pages/home';
-import { ReactPage } from '../../pages/react';
-import { FlutterPage } from '../../pages/flutter';
 
 export interface SideBarData {
   title: string;
@@ -13,17 +10,14 @@ const routerData: Array<SideBarData> = [
   {
     title: 'home',
     path: '/',
-    element: Home(),
   },
   {
     title: 'react',
     path: '/react',
-    element: ReactPage(),
   },
   {
     title: 'flutter',
     path: '/flutter',
-    element: FlutterPage(),
   },
 ];
 

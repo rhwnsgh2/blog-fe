@@ -10,7 +10,7 @@ export const RouteContainer = (): JSX.Element => {
 function RouteElement(): JSX.Element[] {
   const routerList = useSelector((state: RootState) => state.sideBar);
   const ret = routerList.map((item) => {
-    return <Route key={item.title} path={item.path} element={item.element} />;
+    return <Route key={item.title} path={item.path} />;
   });
   return ret;
 }
