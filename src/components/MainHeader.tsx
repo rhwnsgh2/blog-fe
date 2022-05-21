@@ -23,9 +23,12 @@ const TitleWrapper = styled.div`
 `;
 
 const HeaderWrapper = styled.div`
+  position: absolute;
   height: 80px;
   width: 100vw;
   display: flex;
   align-items: center;
+  background-color: white;
+  z-index: 1001;
 `;
 export default MainHeader;
