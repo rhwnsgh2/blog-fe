@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const MainHeader = () => {
+const Header = () => {
   return (
     <HeaderWrapper>
       <TitleWrapper>JH LABS</TitleWrapper>
@@ -23,7 +23,6 @@ const TitleWrapper = styled.div`
 `;
 
 const HeaderWrapper = styled.div`
-  position: absolute;
   height: 80px;
   width: 100vw;
   display: flex;
@@ -31,4 +30,4 @@ const HeaderWrapper = styled.div`
   background-color: white;
   z-index: 1001;
 `;
-export default MainHeader;
+export default Header;

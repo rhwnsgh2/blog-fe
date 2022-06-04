@@ -7,6 +7,7 @@ import { RouteContainer } from './routes/router';
 import { GlobalStyle } from './styles/global-style';
 import { ReducerType } from './redux/rootReducer';
 import MainPage from './pages/mainPage';
+import { ReactPage } from './pages/reactPage';
 
 function App(): JSX.Element {
   const theme = useSelector<ReducerType, DefaultTheme>((state) => state.themeReducer);
@@ -14,7 +15,7 @@ function App(): JSX.Element {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <GlobalStyle />
-        <MainPage />
+        <ReactPage />
         <RouteContainer />
       </BrowserRouter>
     </ThemeProvider>
