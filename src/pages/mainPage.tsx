@@ -1,19 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import MainBody from '../components/MainBody';
-import MainHeader from '../components/MainHeader';
+import Header from '../components/header';
 import mainPage from '../assets/mainPage.png';
+import PageWrapper from '../components/pageWrapper';
+
 const MainPage = () => {
   return (
-    <MainWrapper>
-      <MainHeader />
+    <PageWrapper>
+      <Header />
       <MainBody />
-    </MainWrapper>
+    </PageWrapper>
   );
 };
 
-const MainWrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-`;
 export default MainPage;
